@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/globals/app_assets.dart';
 import 'package:flutter_portfolio/globals/app_colors.dart';
 import 'package:flutter_portfolio/globals/app_text_styles.dart';
 import 'package:flutter_portfolio/globals/constants.dart';
@@ -134,12 +135,18 @@ class HomePage extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                            maxRadius: 24,
-                            backgroundColor: AppColors.themeColor,
-                            child: CircleAvatar(
-                              maxRadius: 20,
-                              backgroundColor: AppColors.bgColor,
-                            ))
+                          maxRadius: 24,
+                          backgroundColor: AppColors.themeColor,
+                          child: CircleAvatar(
+                            maxRadius: 20,
+                            backgroundColor: AppColors.bgColor,
+                            child: Image.asset(
+                              AppAssets.linkedin,
+                              width: 27,
+                              height: 27,
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],
