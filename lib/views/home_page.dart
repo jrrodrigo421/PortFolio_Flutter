@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/globals/app_colors.dart';
 import 'package:flutter_portfolio/globals/app_text_styles.dart';
 import 'package:flutter_portfolio/globals/constants.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -92,9 +93,20 @@ class HomePage extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Sou Desenvolvedor de Software',
+                          'Sou ',
                           style: ApptextStyles.montseratStyle(),
                         ),
+                        AnimatedTextKit(animatedTexts: [
+                          TyperAnimatedText('Desenvolvedor de Software',
+                              textStyle: ApptextStyles.montseratStyle(),
+                              speed: Duration(milliseconds: 600)),
+                          TyperAnimatedText('Desenvolvedor de Software',
+                              textStyle: ApptextStyles.montseratStyle(),
+                              speed: Duration(milliseconds: 600)),
+                          TyperAnimatedText('Desenvolvedor de Software',
+                              textStyle: ApptextStyles.montseratStyle(),
+                              speed: Duration(milliseconds: 600)),
+                        ])
                       ],
                     ),
                   ],
