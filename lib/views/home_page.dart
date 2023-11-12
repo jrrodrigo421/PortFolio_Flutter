@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/globals/app_colors.dart';
 import 'package:flutter_portfolio/globals/app_text_styles.dart';
+import 'package:flutter_portfolio/globals/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.bgColor,
       appBar: AppBar(
@@ -28,21 +30,21 @@ class HomePage extends StatelessWidget {
             ),
             Spacer(),
             Text(
-              'Home',
+              'Inicio',
               style: ApptextStyles.headerTextStyle(),
             ),
             SizedBox(
               width: 30,
             ),
             Text(
-              'About',
+              'Sobre',
               style: ApptextStyles.headerTextStyle(),
             ),
             SizedBox(
               width: 30,
             ),
             Text(
-              'Services',
+              'Serviços',
               style: ApptextStyles.headerTextStyle(),
             ),
             SizedBox(
@@ -56,7 +58,7 @@ class HomePage extends StatelessWidget {
               width: 30,
             ),
             Text(
-              'Contact',
+              'Contato',
               style: ApptextStyles.headerTextStyle(),
             ),
           ],
@@ -65,21 +67,42 @@ class HomePage extends StatelessWidget {
           // ],
         ),
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Column(
-                children: [
-                  Text(
-                    'testando00',
-                    style: ApptextStyles.monteseratStyle(),
-                  ),
-                ],
-              )
-            ],
-          )
-        ],
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(
+            top: size.height * 0.2,
+            left: size.height * 0.2,
+            right: size.height * 0.2),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Olá, seja bem-vindo,',
+                      style: ApptextStyles.montseratStyle(),
+                    ),
+                    Constants.sizedBox(height: 15),
+                    Text(
+                      'Meu nome é Rodrigo Lopes',
+                      style: ApptextStyles.headingStyles(),
+                    ),
+                    Constants.sizedBox(height: 15),
+                    Row(
+                      children: [
+                        Text(
+                          'Sou Desenvolvedor de Software',
+                          style: ApptextStyles.montseratStyle(),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -20,11 +20,20 @@ class ApptextStyles {
     );
   }
 
-  static TextStyle monteseratStyle() {
+  static TextStyle montseratStyle() {
     return GoogleFonts.montserrat(
       color: Colors.white,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w800,
       fontSize: 24,
+    );
+  }
+
+  static TextStyle headingStyles() {
+    return GoogleFonts.rubikMoonrocks(
+      fontSize: 36,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+      letterSpacing: 2,
     );
   }
 }
