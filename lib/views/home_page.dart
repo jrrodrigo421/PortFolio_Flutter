@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text(
                       'Olá, seja bem-vindo,',
-                      style: ApptextStyles.montseratStyle(),
+                      style: ApptextStyles.montseratStyle(color: Colors.white),
                     ),
                     Constants.sizedBox(height: 15),
                     Text(
@@ -94,21 +94,34 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'Sou ',
-                          style: ApptextStyles.montseratStyle(),
+                          style:
+                              ApptextStyles.montseratStyle(color: Colors.white),
                         ),
-                        AnimatedTextKit(animatedTexts: [
-                          TyperAnimatedText('Desenvolvedor de Software',
-                              textStyle: ApptextStyles.montseratStyle(),
-                              speed: Duration(milliseconds: 600)),
-                          TyperAnimatedText('Desenvolvedor de Software',
-                              textStyle: ApptextStyles.montseratStyle(),
-                              speed: Duration(milliseconds: 600)),
-                          TyperAnimatedText('Desenvolvedor de Software',
-                              textStyle: ApptextStyles.montseratStyle(),
-                              speed: Duration(milliseconds: 600)),
-                        ])
+                        AnimatedTextKit(
+                          animatedTexts: [
+                            TyperAnimatedText(
+                              'Desenvolvedor de Software',
+                              textStyle: ApptextStyles.montseratStyle(
+                                  color: Colors.limeAccent),
+                            ),
+                            TyperAnimatedText(
+                              'SantaRitense',
+                              textStyle: ApptextStyles.montseratStyle(
+                                  color: Colors.limeAccent),
+                            ),
+                            TyperAnimatedText(
+                              'curioso por tudo',
+                              textStyle: ApptextStyles.montseratStyle(
+                                  color: Colors.limeAccent),
+                            ),
+                          ],
+                          pause: const Duration(milliseconds: 1000),
+                          displayFullTextOnTap: true,
+                          stopPauseOnTap: true,
+                        )
                       ],
                     ),
+                    Constants.sizedBox(height: 15),
                   ],
                 )
               ],
