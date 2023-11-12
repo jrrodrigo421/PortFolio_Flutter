@@ -122,6 +122,14 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     Constants.sizedBox(height: 15),
+                    SizedBox(
+                      width: size.width * 0.5,
+                      child: Text(
+                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+                          ' Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, '
+                          'when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                          style: ApptextStyles.normalStyle()),
+                    )
                   ],
                 )
               ],

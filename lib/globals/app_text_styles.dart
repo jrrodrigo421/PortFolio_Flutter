@@ -36,4 +36,13 @@ class ApptextStyles {
       letterSpacing: 2,
     );
   }
+
+  static TextStyle normalStyle() {
+    return GoogleFonts.signikaNegative(
+      fontWeight: FontWeight.w500,
+      fontSize: 17,
+      color: Colors.indigo,
+      letterSpacing: 1,
+    );
+  }
 }
