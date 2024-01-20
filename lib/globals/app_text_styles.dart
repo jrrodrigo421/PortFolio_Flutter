@@ -41,7 +41,7 @@ class ApptextStyles {
     return GoogleFonts.signikaNegative(
       fontWeight: FontWeight.w500,
       fontSize: 17,
-      color: Color.fromARGB(255, 150, 154, 171),
+      color: const Color.fromARGB(255, 150, 154, 171),
       letterSpacing: 1,
     );
   }

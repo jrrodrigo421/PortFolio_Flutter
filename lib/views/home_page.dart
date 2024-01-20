@@ -4,6 +4,7 @@ import 'package:flutter_portfolio/globals/app_colors.dart';
 import 'package:flutter_portfolio/globals/app_text_styles.dart';
 import 'package:flutter_portfolio/globals/constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:animate_do/animate_do.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,44 +20,39 @@ class HomePage extends StatelessWidget {
         titleSpacing: 60,
         elevation: 0,
         title: Row(
-          // children: [
           crossAxisAlignment: CrossAxisAlignment.end,
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 60.0),
-          //   child: Row(
-          //     crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
               'Portfolio',
               style: ApptextStyles.headerTextStyle2(),
             ),
-            Spacer(),
+            const Spacer(),
             Text(
               'Inicio',
               style: ApptextStyles.headerTextStyle(),
             ),
-            SizedBox(
+            const SizedBox(
               width: 30,
             ),
             Text(
               'Sobre',
               style: ApptextStyles.headerTextStyle(),
             ),
-            SizedBox(
+            const SizedBox(
               width: 30,
             ),
             Text(
               'Serviços',
               style: ApptextStyles.headerTextStyle(),
             ),
-            SizedBox(
+            const SizedBox(
               width: 30,
             ),
             Text(
               'Portfolio',
               style: ApptextStyles.headerTextStyle(),
             ),
-            SizedBox(
+            const SizedBox(
               width: 30,
             ),
             Text(
@@ -64,9 +60,6 @@ class HomePage extends StatelessWidget {
               style: ApptextStyles.headerTextStyle(),
             ),
           ],
-          //   ),
-          // ),
-          // ],
         ),
       ),
       body: SingleChildScrollView(
@@ -81,14 +74,25 @@ class HomePage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Olá, seja bem-vindo,',
-                      style: ApptextStyles.montseratStyle(color: Colors.white),
+                    Center(
+                      child: Center(
+                        child: FadeInDown(
+                          duration: Duration(milliseconds: 2000),
+                          child: Text(
+                            'Olá, seja bem-vindo,',
+                            style: ApptextStyles.montseratStyle(
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
                     ),
                     Constants.sizedBox(height: 15.0),
-                    Text(
-                      'Meu nome é Rodrigo Lopes',
-                      style: ApptextStyles.headingStyles(),
+                    FadeInRight(
+                      duration: Duration(milliseconds: 2000),
+                      child: Text(
+                        'Meu nome é Rodrigo Lopes',
+                        style: ApptextStyles.headingStyles(),
+                      ),
                     ),
                     Constants.sizedBox(height: 15.0),
                     Row(
@@ -125,10 +129,12 @@ class HomePage extends StatelessWidget {
                     Constants.sizedBox(height: 15.0),
                     SizedBox(
                       width: size.width * 0.5,
-                      child: Text(
-                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-                          ' Lorem Ipsum has been the industry s standard dummy text ever since the 15.000s, '
-                          'when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                      child: Text(''' 
+Apaixonado por tecnologia, motivado pela curiosidade e com vontade de sempre querer avançar mais!
+Já fui do ramo administrativo/comercial, parti para área técnica aprofundei em tecnologias da informação e agora cada vez mais mergulhando no universo da programação.
+
+// Graduado em Tecnólogo de Gestão de Telecomunicações no INATEL
+// Atualmente estudante de Análise e Desenvolvimento de Sistemas na Faculdade Estácio.                          ''',
                           style: ApptextStyles.normalStyle()),
                     ),
                     Constants.sizedBox(height: 22),
@@ -147,31 +153,35 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     Constants.sizedBox(height: 22),
-                    MaterialButton(
-                      onPressed: () {},
-                      color: AppColors.themeColor,
-                      splashColor: AppColors.lowGreen,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 10),
-                      shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide.none),
-                      hoverColor: AppColors.aqua,
-                      elevation: 6,
-                      height: 46,
-                      minWidth: 130,
-                      focusElevation: 12,
-                      child: Text(
-                        "Download CV",
-                        style: ApptextStyles.headerTextStyle(),
-                      ),
-                    ),
+                    buildMaterialBuild(onTap: () {}),
                   ],
                 )
               ],
             )
           ],
         ),
+      ),
+    );
+  }
+
+  MaterialButton buildMaterialBuild({
+    required VoidCallback onTap,
+  }) {
+    return MaterialButton(
+      onPressed: onTap,
+      color: AppColors.themeColor,
+      splashColor: AppColors.lowGreen,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30), borderSide: BorderSide.none),
+      hoverColor: AppColors.aqua,
+      elevation: 6,
+      height: 46,
+      minWidth: 130,
+      focusElevation: 12,
+      child: Text(
+        "Download CV",
+        style: ApptextStyles.headerTextStyle(),
       ),
     );
   }
@@ -185,10 +195,10 @@ class HomePage extends StatelessWidget {
         color: AppColors.bgColor,
         shape: BoxShape.circle,
       ),
-      padding: EdgeInsets.all(6),
+      padding: const EdgeInsets.all(6),
       child: InkWell(
         // child: CircleAvatar(
-        borderRadius: BorderRadius.circular(500.0),
+        borderRadius: BorderRadius.circular(700.0),
         hoverColor: AppColors.aqua,
         splashColor: AppColors.lowGreen,
         onTap: () {},
