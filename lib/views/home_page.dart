@@ -5,6 +5,7 @@ import 'package:flutter_portfolio/globals/app_text_styles.dart';
 import 'package:flutter_portfolio/globals/constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter_portfolio/widgets/profile_animate.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -77,6 +78,8 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,13 +140,12 @@ class HomePage extends StatelessWidget {
                       Constants.sizedBox(height: 15.0),
                       SizedBox(
                         width: size.width * 0.5,
-                        child: Text(''' 
-          Apaixonado por tecnologia, motivado pela curiosidade e com vontade de sempre querer avançar mais!
-          Já fui do ramo administrativo/comercial, parti para área técnica aprofundei em tecnologias da informação e agora cada vez mais mergulhando no universo da programação.
-          
-          // Graduado em Tecnólogo de Gestão de Telecomunicações no INATEL
-          // Atualmente estudante de Análise e Desenvolvimento de Sistemas na Faculdade Estácio.                          ''',
-                            style: ApptextStyles.normalStyle()),
+                        child: FadeInRightBig(
+                          duration: const Duration(milliseconds: 2000),
+                          child: const Text(
+                              'Venha fazer um tour pelas minhas habilidades...',
+                              style: TextStyle(color: Colors.white)),
+                        ),
                       ),
                       Constants.sizedBox(height: 22),
                       Row(
@@ -161,12 +163,10 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                       Constants.sizedBox(height: 22),
-                      buildMaterialBuild(onTap: () {}),
-                      const SizedBox(
-                        height: 60,
-                      )
+                      buildMaterialButtonBuild(onTap: () {}),
                     ],
-                  )
+                  ),
+                  const ProfileAnimation(),
                 ],
               )
             ],
@@ -176,7 +176,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  MaterialButton buildMaterialBuild({
+  MaterialButton buildMaterialButtonBuild({
     required VoidCallback onTap,
   }) {
     return MaterialButton(
